@@ -24,3 +24,5 @@ npm run start
 // 启动服务端server
 npm run start:server
 ```
+
+实现过程，查看 [day-02.pdf](./day-02.pdf)
