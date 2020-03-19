@@ -3,17 +3,19 @@ body {
 }
 
 .container {
-  margin: 20px;
+  margin: 100px;
   font-size: 1rem;
   background: #5bc49f;
   color: #5bc49f;
   padding: 20px;
 }
+
 .draggable {
   padding: 10px;
   text-align: center;
   background: #fff;
 }
+
 .draggable.dragging {
   opacity: 0.5;
 }
