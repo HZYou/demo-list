@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <link rel="stylesheet" href="/public/css/main.css">
+</head>
+
+<body>
+    <h1 class="title">留言你想留的niu~</h1>
+    <a class="add-button" href="/post">发表留言</a>
+    <ul class='list'>
+        {{each postList}}
+        <li><span class='username'>{{$value.userName}}</span>说：{{$value.content}} <span
+                class="time">{{$value.createTime}}</span></li>
+        {{/each}}
+    </ul>
+</body>
+
+</html>

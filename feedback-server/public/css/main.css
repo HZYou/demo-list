@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  padding: 1.8rem;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+h1 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  padding: 6px;
+}
+.add-button {
+  display: inline-block;
+  padding: 8px;
+  background: #03c503;
+
+  color: #fff;
+}
+ul {
+  list-style: none;
+  padding: 8px;
+}
+li {
+  margin: 8px 0;
+}
+li .username {
+  font-weight: 500;
+  margin-right: 6px;
+}
+li .time {
+  float: right;
+  color: #999;
+}
+
+/*------post ----*/
+.form-group {
+  padding: 18px;
+  font-size: 0.8rem;
+  display: flex;
+}
+label {
+  margin-right: 8px;
+}
+
+.btn {
+  padding: 8px 16px;
+  margin-left: 18px;
+  background: #03c503;
+
+  color: #fff;
+}
