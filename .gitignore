@@ -1,3 +1,6 @@
 node_modules/
 dist/
 package-lock.json
+launch.json
+settings.json
+.DS_Store
