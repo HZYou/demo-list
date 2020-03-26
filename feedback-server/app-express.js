@@ -2,7 +2,7 @@ const path = require('path')
 const express = require('express')
 
 const app = express()
-
+const fs = require('fs')
 app.engine('html', require('express-art-template'));
 
 app.set('views', path.join(__dirname, 'view'));
@@ -21,7 +21,15 @@ const postList = [
 ]
 
 app.get('/', (req, res) => {
-    res.render('index.html', { postList })
+    fs.readFile('./public/data/comment-data.json', 'utf-8', (err, data) => {
+        if (err) {
+            res.send(err)
+            return
+        }
+        console.log(data)
+        res.render('index.html', { postList: JSON.parse(data) })
+    })
+
 })
 app.use('/public', express.static('./public'))
 
@@ -30,10 +38,22 @@ app.get('/post', (req, res) => {
 })
 
 app.get('/add', (req, res) => {
-    const comment = req.query;
-    comment.createTime = new Date().toISOString()
-    postList.unshift(comment)
-    res.redirect('/')
+    fs.readFile('./public/data/comment-data.json', 'utf-8', (err, data) => {
+        if (err) {
+            res.send(err)
+            return
+        }
+        const comment = req.query;
+        comment.createTime = new Date().toISOString()
+        data = JSON.parse(data)
+        data.unshift(comment)
+        fs.writeFile('./public/data/comment-data.json', JSON.stringify(data), (err) => {
+            console.log(err)
+            res.redirect('/')
+        })
+
+    })
+
 })
 
 
